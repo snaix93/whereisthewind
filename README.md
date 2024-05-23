@@ -3,12 +3,14 @@
 ## Requirements
 - php version  >= 8.2 
 - composer
+- npm 
 
 ## Installation
 Use your local terminal
-- run: composer install
+- run: ```composer install```
 - update .env.example to .env and update the database credentials to satisfy your local environment
-- run: php artisan migrate - to migrate the default schema
+- To migrate the initial schema run: ```php artisan migrate ```
+- To install the components run: ``` npm install ``` and ``` npm run build ``` 
 - run: php artisan serve . This command will start a server at the address http://127.0.0.1:8000/
 - That's it. Create an account and enjoy the api.  :)
 

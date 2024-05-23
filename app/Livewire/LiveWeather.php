@@ -14,14 +14,15 @@ class LiveWeather extends Component
     public $city;
     public $userCities;
     public $apiResponse;
+    public $user;
     protected $rules = [
         'city' => 'required|min:3|string',
     ];
 
     public function render()
     {
-        if(!empty($user = auth()->user())) {
-            $this->userCities = $user->cities;
+        if(!empty($this->user = auth()->user())) {
+            $this->userCities = $this->user->cities;
         }
 
         return view('livewire.live-weather');
@@ -29,6 +30,9 @@ class LiveWeather extends Component
 
     public function getWeather(WeatherApiAction $weatherAction)
     {
+        if(empty($this->user)){
+            return redirect()->route('register');
+        }
         $this->validate();
         $this->apiResponse = $weatherAction->execute($this->city);
         $this->city = '';
