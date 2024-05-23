@@ -1,17 +1,11 @@
 <nav class='flex items-center px-4 pt-6 mx-auto max-w-7xl sm:px-6 lg:px-8'>
     <div class='flex justify-between items-center w-full'>
-
         <!-- Logo -->
         <div class='flex items-center'>
-
             <!-- Large logo -->
             <a href="/" class='hidden text-2xl font-black md:hidden xs:hidden lg:block group'>
                 <span class="text-white transition duration-200 ease-in-out group-hover:text-dark-300"><span class='transition duration-200 ease-in-out text-dark-300 group-hover:text-white -ml-4'></span></span>
-
-{{--                <span class='text-white transition duration-200 ease-in-out group-hover:text-dark-300'> . $end }}</span>--}}
-{{--                <span class='transition duration-200 ease-in-out text-dark-300 group-hover:text-white'> @🧙</span>--}}
             </a>
-
             <!-- Small logo for mobile screens -->
             <a href="/" class='block text-3xl font-black md:block sm:block lg:hidden group'>
                 <span class='text-white transition duration-200 ease-in-out group-hover:text-dark-300'></span>
@@ -31,7 +25,7 @@
                 About
             </a>
             <a href="case-study" class="block py-1 px-4 rounded-full transition duration-200 ease-in-out sm:inline-block hover:text-white hover:bg-dark-700">
-                Case Study
+
             </a>
         </div>
 
@@ -40,7 +34,6 @@
             @auth
             <form method="POST" action="{{ route('logout') }}" x-data>
                 @csrf
-
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
                         this.closest('form').submit(); "
                        class="flex justify-center items-center py-3 px-8 w-auto text-base font-semibold leading-snug bg-white rounded-full transition ease-in-out duration-250 text-dark-900 hover:text-white focus:outline-none hover:bg-dark-800" href="contact">
@@ -86,14 +79,6 @@
                     <a href="about" class="block py-2 px-6 font-medium rounded-full transition duration-200 ease-in-out text-dark-300 hover:text-white hover:bg-dark-700 sm:inline-block">
                         About
                     </a>
-                    <a href="about" class="block py-2 px-6 font-medium rounded-full transition duration-200 ease-in-out text-dark-300 hover:text-white hover:bg-dark-700 sm:inline-block">
-                        Case Study
-                    </a>
-                    <a href="pricing" class="block py-2 px-6 font-medium rounded-full transition duration-200 ease-in-out text-dark-300 hover:text-white hover:bg-dark-700 sm:inline-block">
-                        Pricing
-                        <a class="flex justify-center items-center py-4 px-8 w-auto text-lg font-semibold leading-snug bg-white rounded-full transition ease-in-out duration-250 text-dark-900 hover:text-white focus:outline-none hover:bg-dark-700" href="contact">
-                            Let's talk 2
-                        </a>
                 </div>
             </div>
         </div>

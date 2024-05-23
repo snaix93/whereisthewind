@@ -7,12 +7,12 @@
         <div class='flex flex-col lg:mx-auto'>
             <div class='flex items-center'>
                 <a href="/" class='text-2xl font-black lg:block group'>
-                    <span class='text-white transition duration-200 ease-in-out group-hover:text-dark-300'>Eenllay</span>
-                    <span class='transition duration-200 ease-in-out text-dark-300 group-hover:text-white'>Marketing</span>
+                    <span class='text-white transition duration-200 ease-in-out group-hover:text-dark-300'>WhereIs</span>
+                    <span class='transition duration-200 ease-in-out text-dark-300 group-hover:text-white'>TheWind</span>
                 </a>
             </div>
             <div class='mt-6 text-lg md:mt-8 text-dark-300'>
-                &#169; 2023 <a href="https://eenllay.marketing/">Eenllay </a> <a href="https://eenllay.marketing/">Marketing</a>.
+                &#169; 2024 <a href="/">WhereIs </a> <a href="">TheWind</a>.
                 <br> All rights reserved.
             </div>
         </div>
@@ -29,9 +29,6 @@
             <p class='mt-6 text-lg text-dark-300'>
                 0759 459 0099
             </p>
-            <!--      <p class='text-lg text-dark-300'>-->
-            <!--        hello@Eenllay.com-->
-            <!--      </p>-->
         </div>
 
         <!-- Site links -->
@@ -92,8 +89,3 @@
         </div>
     </div>
 </footer>
-
-<!-- Google Tag Manager (noscript) -->
-{{--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7C2T6L"--}}
-{{--                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>--}}
-<!-- End Google Tag Manager (noscript) -->

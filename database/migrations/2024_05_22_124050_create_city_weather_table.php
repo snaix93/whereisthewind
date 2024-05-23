@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('comment')->nullable();
             $table->float('lat');
             $table->float('lon');
+            $table->float('current_temp')->nullable();
             $table->float('temp_min')->nullable();
             $table->float('temp_max')->nullable();
             $table->float('humidity')->nullable();

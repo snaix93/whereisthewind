@@ -66,6 +66,6 @@ class User extends Authenticatable
 
     public function cities(): BelongsToMany
     {
-        return $this->belongsToMany(CityWeather::class, 'user_weather');
+        return $this->belongsToMany(CityWeather::class, 'user_weather')->orderBy('id', 'desc');
     }
 }

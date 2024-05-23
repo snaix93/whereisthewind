@@ -10,7 +10,7 @@ class CityWeather extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'city', 'comment', 'lat', 'lon', 'temp_min', 'weather_updated_at',
+        'city', 'comment', 'lat', 'lon', 'current_temp', 'temp_min', 'weather_updated_at',
         'temp_max', 'humidity', 'temp_feels_like', 'weather_update_at'
     ];
 
