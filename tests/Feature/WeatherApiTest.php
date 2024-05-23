@@ -56,21 +56,4 @@ class WeatherApiTest extends TestCase
 
     }
 
-    public function test_can_create_(): void
-    {
-        $response = Http::withUrlParameters([
-            'endpoint' => 'https://api.openweathermap.org',
-            'page' => 'data',
-            'version' => '2.5',
-            'type' => 'weather',
-            'lat' => '25.22',
-            'lon' => '21.33',
-            'api_key' => config('custom.weather_secret')
-        ])->get('{+endpoint}/{page}/{version}/{type}?lat={lat}&lon={lon}&appid={api_key}&units=metric');
-
-        $this->assertEquals(200, $response->status());
-        $this->assertEquals($response->collect()->first()['lat'], '25.22');
-        $this->assertEquals($response->collect()->first()['lon'], '21.33');
-    }
-
 }

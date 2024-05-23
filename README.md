@@ -15,4 +15,4 @@ Use your local terminal
 - That's it. Create an account and enjoy the api.  :)
 
 ## Testing
-   run: php artisan test --filter WeatherApiTest tests/Feature/WeatherApiTest.php
+   run: ```php artisan test --filter WeatherApiTest tests/Feature/WeatherApiTest.php ```
