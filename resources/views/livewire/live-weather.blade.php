@@ -23,7 +23,7 @@
         </div>
     </section>
     <section class='py-12 px-4 md:py-16 sm:px-6 lg:px-8'>
-        @if(empty($apiResponse))
+        @if(empty($currentWeather))
         <div class='mt-12 w-full lg:mt-0'>
             <div class='py-12 px-4 mx-auto w-full rounded-3xl shadow-xl lg:mr-0 lg:ml-auto bg-dark-700 sm:p-16 lg:p-14 xl:p-16' wire:loading.remove>
                 @if(empty($errors->count()))
@@ -61,13 +61,26 @@
             <div class='mt-12 w-full lg:mt-0'>
                 <div class='py-12 px-4 mx-auto w-full rounded-3xl shadow-xl lg:mr-0 lg:ml-auto bg-dark-700 sm:p-16 lg:p-14 xl:p-16' wire:loading.remove>
                     <h3 class='mt-4 text-2xl font-extrabold text-white md:mt-5'>
-                        {{ $apiResponse }}
+                        {{ $currentWeather }}
                     </h3>
+                    @if($showHowToDressButton)
+                        <div class='flex justify-start mt-6' wire:click="howToDressAPI">
+                            <button type='submit' class="flex justify-center items-center py-4 px-8 w-auto h-14 text-base font-semibold leading-snug bg-white rounded-full transition ease-in-out duration-250 text-dark-900 hover:text-white focus:outline-none hover:bg-dark-900">
+                                How To Dress?
+                            </button>
+                        </div>
+                    @endif
+                    @if(!empty($howToDress))
+                        <h3 class='mt-4 text-2xl font-extrabold text-white md:mt-5'>
+                            {{ $howToDress }}
+                        </h3>
+                    @endif
                     <div class='flex justify-start mt-6' wire:click="resetApiResponse">
                         <button type='submit' class="flex justify-center items-center py-4 px-8 w-auto h-14 text-base font-semibold leading-snug bg-white rounded-full transition ease-in-out duration-250 text-dark-900 hover:text-white focus:outline-none hover:bg-dark-900">
                             Try again?
                         </button>
                     </div>
+
                 </div>
             </div>
         @endif

@@ -23,8 +23,8 @@ class WeatherApiAction implements DeletesUsers
             return 'The city is not valid';
         }
 
-        //Select the first result (if are multiple cities with the same name).
-        // This approach is only for the test app (otherwise user would select the country)
+        // Select the first result (if are multiple cities with the same name).
+//        Todo: allow user to select the country and get only 1 result
         $latLonByName = $latLonByName->collect()->first();
         if(!empty($latLonByName['name'])){
             $lat = $latLonByName['lat'];
@@ -38,7 +38,6 @@ class WeatherApiAction implements DeletesUsers
 //        Todo: add more checks if the data is not consistent
         $cityWeather = $cityWeather->object();
 
-
         $location->update([
             'comment' => !empty($comment = $cityWeather->weather[0]) ? $comment->description : null,
             'current_temp' => $cityWeather->main->temp,
@@ -49,6 +48,7 @@ class WeatherApiAction implements DeletesUsers
             'weather_updated_at' => Carbon::now(),
         ]);
 
+//        Todo: return with status (success, error, etc.)
         return 'The current temperature in ' . ucfirst($city) . ' is ' . $cityWeather->main->temp
                 . '°C. Feels like ' . $cityWeather->main->feels_like . '°C, ' . $comment->description . ', ' . $cityWeather->main->humidity . '% humidity.';
     }

@@ -10,5 +10,7 @@ return [
     | The secret would be called from .env or better Circle.ci or AWS
     */
 
-    'weather_secret' => env('WEATHER_SECRET', '858f15fed9292cbe25c341a754c55e45'),
+    'weather_secret' => env('WEATHER_SECRET', ''),
+    'open-ai' => env('OPEN_AI', ''),
+    'open-ai-api' => env('OPEN_AI_API', 'https://api.openai.com/v1/chat/completions'),
 ];

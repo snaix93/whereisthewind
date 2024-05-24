@@ -2,19 +2,18 @@
 
 namespace App\Livewire;
 
+use App\Actions\HowToDressAction;
 use App\Actions\WeatherApiAction;
-use App\Models\User;
-use App\Models\UserWeather;
-use GuzzleHttp\Psr7\Request;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class LiveWeather extends Component
 {
     public $city;
     public $userCities;
-    public $apiResponse;
+    public $currentWeather;
     public $user;
+    public $showHowToDressButton = false;
+    public $howToDress;
     protected $rules = [
         'city' => 'required|min:3|string',
     ];
@@ -34,13 +33,21 @@ class LiveWeather extends Component
             return redirect()->route('register');
         }
         $this->validate();
-        $this->apiResponse = $weatherAction->execute($this->city);
+        $this->currentWeather = $weatherAction->execute($this->city);
+        $this->showHowToDressButton = (bool)strpos($this->currentWeather, 'current temperature'); //Just for test app
         $this->city = '';
+    }
+
+    public function howToDressAPI(HowToDressAction $howToDressAction)
+    {
+        $this->howToDress = $howToDressAction->execute($this->currentWeather);
+        $this->showHowToDressButton = false;
     }
 
     public function resetApiResponse()
     {
-        $this->apiResponse = null;
+        $this->currentWeather = null;
         $this->city = '';
+        $this->howToDress = '';
     }
 }
